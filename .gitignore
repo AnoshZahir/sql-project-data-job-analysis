@@ -1,0 +1,24 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+._*
+
+# Log files
+*.log
+
+# Backup and temporary files
+*.bak
+*.tmp
+
+# Environment variables
+.env
+
+# SQL dumps
+*.sql
+/dumps/
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
