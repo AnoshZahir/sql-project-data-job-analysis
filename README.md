@@ -7,9 +7,9 @@ This project focuses on analyzing job listing data from the tech industry using 
 To set up and run the queries in this project, follow the steps below:
 
 1. **Clone the repository**:
-'''bash
+```bash
 git clone https://github.com/AnoshZahir/sql-project-data-job-analysis.git
-'''
+```
 
 2. **Download or use the required files for this project**:
 
@@ -34,8 +34,15 @@ git clone https://github.com/AnoshZahir/sql-project-data-job-analysis.git
 
 ## Usage
 Here are some examples of the SQL queries included in this project:
-Total number of jobs per category: This query returns the number of jobs available in each category:
---'''To be updated'''
+-- Count of Job Postings by Month
+-- This query extracts the month from the `job_posted_date` column and returns the count of job postings for each month.
+```sql
+SELECT COUNT(job_id),
+       EXTRACT(MONTH FROM job_posted_date) AS month
+FROM job_postings_fact
+GROUP BY month
+LIMIT 5;
+```
 
 Average salary per job category: This query calculates the average salary for each job category:
 --'''To be updated'''
