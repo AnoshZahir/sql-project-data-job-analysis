@@ -34,13 +34,15 @@ git clone https://github.com/AnoshZahir/sql-project-data-job-analysis.git
 
 ## Usage
 Here are some examples of the SQL queries included in this project:
-   - Count of Job Postings by Month
-   -- This query extracts the month from the `job_posted_date` column and returns the count of job postings for each month.
+   - **Count of Job Postings by Month**: This query extracts the month from the `job_posted_date` column and returns the count of job postings for each month.
 ```sql
-SELECT COUNT(job_id),
-       EXTRACT(MONTH FROM job_posted_date) AS month
-FROM job_postings_fact
-GROUP BY month
+SELECT 
+   COUNT(job_id),
+   EXTRACT(MONTH FROM job_posted_date) AS month
+FROM
+   job_postings_fact
+GROUP BY
+   month
 LIMIT 5;
 ```
 
