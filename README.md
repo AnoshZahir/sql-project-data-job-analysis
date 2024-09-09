@@ -21,15 +21,14 @@ git clone https://github.com/AnoshZahir/sql-project-data-job-analysis.git
      - [Download csv files and SQL scripts](lukeb.co/sql_project_csvs)
 
 3. To set up the database:
-   - Execute the SQL scripts from the `sql_load/` folder (or the downloaded files) to create the necessary tables.
-   - Load the data into the database using the CSV files from the `csv_files/` folder (or the downloaded files).
+   - Execute the SQL scripts from the `sql_load/` folder. This will create the necessary tables and load the data into the database using the CSV files from the `csv_files/` folder.
 
 5. Check that you now have the following 4 tables and they are loaded with the relevant data.
    - job_postings_fact
    - skills_job_dim
    - skills_dim
    - company_dim
-
+ß
 ## Usage
 Here are some examples of the SQL queries included in this project:
 Total number of jobs per category: This query returns the number of jobs available in each category:
