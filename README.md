@@ -34,16 +34,19 @@ git clone https://github.com/AnoshZahir/sql-project-data-job-analysis.git
 
 ## Usage
 Here are some examples of the SQL queries included in this project:
-   - **Count of Job Postings by Month**: This query extracts the month from the `job_posted_date` column and returns the count of job postings for each month.
+   - **Count of Job Postings by Month**: This query returns the number of job postings for "Data Analyst" roles, grouped by the month of posting. It extracts the month from the `job_posted_date` field and counts the number of postings in each month.
 ```sql
 SELECT 
-   COUNT(job_id),
+   COUNT(job_id) AS job_posted_count,
    EXTRACT(MONTH FROM job_posted_date) AS month
 FROM
    job_postings_fact
+WHERE
+   job_title_short = 'Data Analyst'
 GROUP BY
    month
-LIMIT 5;
+ORDER BY
+   job_posted_count;
 ```
 
 Average salary per job category: This query calculates the average salary for each job category:
