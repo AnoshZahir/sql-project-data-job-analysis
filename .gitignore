@@ -13,12 +13,9 @@
 # Environment variables
 .env
 
-# SQL dumps
-*.sql
-/dumps/
-
 # Editor directories
 .vscode/
 .idea/
 *.sublime-workspace
 *.sublime-project
+
