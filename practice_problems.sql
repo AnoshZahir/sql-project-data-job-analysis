@@ -17,13 +17,17 @@ GROUP BY
 Write a query to count the number of job postings for each month in 2023, adjusting the job_posted_date to be in "America/New_York" time zone before extracting (hint) the month.Assume the job_posted_date is stored in UTC. Group by order by the month.
 '''
 SELECT 
-   EXTRACT(MONTH FROM job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York') AS "month",
+   EXTRACT(MONTH FROM job_posted_date AT TIME ZONE 'America/New_York') AS "month",
    count(job_id) AS "Number of jobs"
 FROM
    job_postings_fact
 WHERE
-   EXTRACT(YEAR FROM job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York') = 2023
+   EXTRACT(YEAR FROM job_posted_date AT TIME ZONE 'America/New_York') = 2023
 GROUP BY
    "month"
 ORDER BY
    "month"
+
+'''Practice Problem 3
+Write a query to find companies (include company name) that have posted jobs offerings health insurance, where these postings were made in the second quarter of 2023. Use date extraction to filter quarter.
+'''
