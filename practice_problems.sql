@@ -32,13 +32,14 @@ ORDER BY
 Write a query to find companies (include company name) that have posted jobs offering health insurance, where these postings were made in the second quarter of 2023. Use date extraction to filter quarter.
 '''
 SELECT 
-   companies.name AS "company name"
+   companies.name AS "Company name"
 FROM
-   company_dim AS "companies"
+   company_dim AS companies
 JOIN
-   job_postings_fact as "jobs"
+   job_postings_fact as jobs
 ON
-   "compay name".company_id = "jobs".company_id
+   companies.company_id = jobs.company_id
 WHERE
-   "jobs".job_health_insurance = TRUE AND
-   EXTRACT(QUARTER FROM job_posted_date) = 2
+   jobs.job_health_insurance = TRUE AND
+   EXTRACT(QUARTER FROM jobs.job_posted_date) = 2 AND
+   EXTRACT(YEAR FROM jobs.job_posted_date) = 2023
