@@ -46,7 +46,7 @@ WHERE
 GROUP BY
    month
 ORDER BY
-   job_posted_count;
+   job_posted_count DESC;
 ```
 
 Average salary per job category: This query calculates the average salary for each job category:
