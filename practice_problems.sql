@@ -36,7 +36,7 @@ SELECT
 FROM
    company_dim AS companies
 JOIN
-   job_postings_fact as jobs
+   job_postings_fact AS jobs
 ON
    companies.company_id = jobs.company_id
 WHERE
