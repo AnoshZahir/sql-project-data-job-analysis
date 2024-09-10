@@ -43,3 +43,10 @@ WHERE
    jobs.job_health_insurance = TRUE AND
    EXTRACT(QUARTER FROM jobs.job_posted_date) = 2 AND
    EXTRACT(YEAR FROM jobs.job_posted_date) = 2023
+
+'''Practice Problem 6: Create Tables from other tables.
+Create three tables
+* Jan 2023 jobs
+* Feb 2023 jobs
+* Mar 2023 jobs
+'''
