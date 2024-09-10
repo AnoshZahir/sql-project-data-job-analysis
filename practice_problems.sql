@@ -29,5 +29,16 @@ ORDER BY
    "month"
 
 '''Practice Problem 3
-Write a query to find companies (include company name) that have posted jobs offerings health insurance, where these postings were made in the second quarter of 2023. Use date extraction to filter quarter.
+Write a query to find companies (include company name) that have posted jobs offering health insurance, where these postings were made in the second quarter of 2023. Use date extraction to filter quarter.
 '''
+SELECT 
+   companies.name AS "company name"
+FROM
+   company_dim AS "companies"
+JOIN
+   job_postings_fact as "jobs"
+ON
+   "compay name".company_id = "jobs".company_id
+WHERE
+   "jobs".job_health_insurance = TRUE AND
+   EXTRACT(QUARTER FROM job_posted_date) = 2
