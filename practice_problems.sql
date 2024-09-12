@@ -90,4 +90,11 @@ Categorize the salaries from each job posting to see if it fits in my desired sa
  - Why? It is easy to determine which postings are worth looking at based on salary.
  - Look at data analyst roles only.
  - Order from highest to lowest.
+
+ NOTES: The following are not clear from the problem instructions:
+ - There are three fields related to salary. "salary_rate", "salary_year_avg", "salary_hour_avg".
+ - The ranges for the salary are not given.
+ - If the ranges were given then it be easy to pick the appropriate salary column.
+ - What to do?
 '''
+SELECT
