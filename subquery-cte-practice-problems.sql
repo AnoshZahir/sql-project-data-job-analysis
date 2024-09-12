@@ -7,7 +7,6 @@ Identify the top 5 skills that are most frequently mentioned in job postings. Us
 -- SELECT * FROM skills_dim LIMIT 5;
 
 -- Step 2: Write the main subquery to get the top 5 most frequent skills.
-
 SELECT
     skills_dim.skills as skill_name, -- Get the skill name from the skills_dim table.
     jobs_per_skill.number_of_jobs -- Get the number of jobs from the subquery.
