@@ -35,6 +35,24 @@ LIMIT 30
 
 '''Dynamic salary ranges
 The problem does not define the salary ranges. So instead of using magic numbers we use POSTgres DO blocks to define local variables.
-
-
 '''
+DO $$
+DECLARE
+    low_salary INTEGER := 50000;
+    high_salary INTEGER := 100000;
+BEGIN
+    -- Your query using dynamic salary ranges
+    PERFORM salary_year_avg, CASE
+        WHEN salary_year_avg < low_salary THEN 'Low'
+        WHEN salary_year_avg >= low_salary AND salary_year_avg <= high_salary THEN 'Standard'
+        ELSE 'High'
+    END AS salary_buckets
+    FROM job_postings_fact
+    WHERE
+       job_title_short = 'Data Analyst' AND
+       salary_year_avg IS NOT NULL
+    ORDER BY
+       salary_year_avg DESC
+    LIMIT 30;
+END $$;
+
