@@ -74,3 +74,29 @@ WHERE
    salary_year_avg IS NOT NULL
 ORDER BY
    salary_year_avg DESC
+
+'''Using functions that take the salary ranges as parameters'''
+CREATE OR REPLACE FUNCTION categorize_salaries(low_salary INTEGER, high_salary INTEGER)
+RETURNS TABLE (
+    "Annual Salary" NUMERIC,
+    salary_buckets TEXT
+) AS $$
+BEGIN
+   RETURN QUERY
+   SELECT
+      salary_year_avg AS "Annual Salary",
+      CASE
+         WHEN salary_year_avg < low_salary THEN 'Low'
+         WHEN salary_year_avg >= low_salary AND salary_year_avg <= high_salary THEN 'Standard'
+         ELSE 'High'
+      END AS salary_buckets
+   FROM
+      job_postings_fact
+   WHERE
+      job_title_short = 'Data Analyst' AND
+      salary_year_avg IS NOT NULL
+   ORDER BY
+      salary_year_avg DESC
+   LIMIT 30;
+END;
+$$ LANGUAGE plpgsql;
