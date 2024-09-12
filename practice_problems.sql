@@ -50,3 +50,36 @@ Create three tables
 * Feb 2023 jobs
 * Mar 2023 jobs
 '''
+
+-- Create a table for jobs posted in January 2023
+CREATE TABLE jan_2023_jobs AS
+   SELECT
+      *
+   FROM
+      job_postings_fact
+   WHERE
+      EXTRACT(MONTH FROM job_posted_date) = 1 AND
+      EXTRACT(YEAR FROM job_posted_date) = 2023;
+
+-- Create a table for jobs posted in February 2023
+CREATE TABLE feb_2023_jobs AS
+   SELECT
+      *
+   FROM
+      job_postings_fact
+   WHERE 
+      EXTRACT(MONTH FROM job_posted_date) = 2 AND
+      EXTRACT(YEAR FROM job_posted_date) = 2023;
+
+-- Create a table for jobs posted in March 2023
+CREATE TABLE mar_2023_jobs AS
+   SELECT
+      *
+   FROM
+      job_postings_fact
+   WHERE
+      EXTRACT(MONTH FROM job_posted_date) = 3 AND
+      EXTRACT(YEAR FROM job_posted_date) = 2023;
+
+-- Quick sanity check to make sure the tables were created and correct data loaded.
+SELECT * FROM jan_2023_jobs LIMIT 5;
