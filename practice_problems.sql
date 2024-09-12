@@ -104,7 +104,7 @@ SELECT
    CASE
       -- Categorize salaries
       -- Handle NULL salaries first.
-      WHEN salary_year_avg IS NULL THEN 'Unknown'
+      --WHEN salary_year_avg IS NULL THEN 'Unknown'
      -- Assumes no negative values in salary_year_avg field. 
       WHEN salary_year_avg < 50000 THEN 'Low'
       WHEN salary_year_avg >= 50000 AND salary_year_avg <= 100000 THEN 'Standard'
