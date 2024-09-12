@@ -82,3 +82,12 @@ CREATE TABLE mar_2023_jobs AS
 
 -- Quick sanity check to make sure the tables were created and correct data loaded.
 SELECT * FROM jan_2023_jobs LIMIT 5;
+
+''' CASE WHEN Practice Problem 1
+Categorize the salaries from each job posting to see if it fits in my desired salary range.
+ - Put salary into different buckets.
+ - Define what is a high, standard or low salary with our own conditions.
+ - Why? It is easy to determine which postings are worth looking at based on salary.
+ - Look at data analyst roles only.
+ - Order from highest to lowest.
+'''
