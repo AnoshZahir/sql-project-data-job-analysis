@@ -96,12 +96,15 @@ Categorize the salaries from each job posting to see if it fits in my desired sa
  - The ranges for the salary are not given.
  - If the ranges were given then it be easy to pick the appropriate salary column.
  - What to do?
+ - Decided to use salary_year_avg field. There NULL values in this field and the problem does not instruct on what to do with them. I will add a new case category.
 '''
 SELECT
    salary_year_avg as "Annual Salary",
    CASE
       -- Categorize salaries
-      -- Assumes no negative values in salary_year_avg field. 
+      -- Handle NULL salaries first.
+      WHEN salary_year_avg IS NULL THEN 'Unknown'
+     -- Assumes no negative values in salary_year_avg field. 
       WHEN salary_year_avg < 50000 THEN 'Low'
       WHEN salary_year_avg >= 50000 AND salary_year_avg <= 100000 THEN 'Standard'
       ELSE 'High'
@@ -112,4 +115,4 @@ WHERE
    job_title_short = 'Data Analyst'
 ORDER BY
    salary_year_avg DESC
-LIMIT 30
+--LIMIT 30
