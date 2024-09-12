@@ -50,7 +50,6 @@ Create three tables
 * Feb 2023 jobs
 * Mar 2023 jobs
 '''
-
 -- Create a table for jobs posted in January 2023
 CREATE TABLE jan_2023_jobs AS
    SELECT
