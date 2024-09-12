@@ -97,6 +97,7 @@ Categorize the salaries from each job posting to see if it fits in my desired sa
  - If the ranges were given then it be easy to pick the appropriate salary column.
  - What to do?
  - Decided to use salary_year_avg field. There NULL values in this field and the problem does not instruct on what to do with them. I will add a new case category.
+ - Further reflections: Instead of adding a category for NULL salaries, remove these rows altogether.
 '''
 SELECT
    salary_year_avg as "Annual Salary",
@@ -112,7 +113,8 @@ SELECT
 FROM
    job_postings_fact
 WHERE
-   job_title_short = 'Data Analyst'
+   job_title_short = 'Data Analyst' AND
+   salary_year_avg IS NOT NULL
 ORDER BY
    salary_year_avg DESC
---LIMIT 30
+LIMIT 30
