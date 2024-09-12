@@ -91,13 +91,13 @@ Categorize the salaries from each job posting to see if it fits in my desired sa
  - Look at data analyst roles only.
  - Order from highest to lowest.
 
- NOTES: The following are not clear from the problem instructions:
- - There are three fields related to salary. "salary_rate", "salary_year_avg", "salary_hour_avg".
- - The ranges for the salary are not given.
- - If the ranges were given then it be easy to pick the appropriate salary column.
- - What to do?
- - Decided to use salary_year_avg field. There NULL values in this field and the problem does not instruct on what to do with them. I will add a new case category.
- - Further reflections: Instead of adding a category for NULL salaries, remove these rows altogether.
+ NOTES:
+- Three fields are related to salary: "salary_rate", "salary_year_avg", "salary_hour_avg".
+- The problem does not specify which salary field to use or provide salary ranges.
+- Decision: Use "salary_year_avg" for categorizing, as it provides a more standard yearly view of salaries.
+- Handling NULL values:
+   - Instead of categorizing NULL salaries as "Unknown", I have decided to remove those rows entirely from the result set for cleaner output.
+   - This ensures that the analysis focuses only on job postings with defined yearly salaries.
 '''
 SELECT
    salary_year_avg as "Annual Salary",
