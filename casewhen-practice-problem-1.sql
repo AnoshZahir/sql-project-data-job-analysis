@@ -52,7 +52,25 @@ BEGIN
        job_title_short = 'Data Analyst' AND
        salary_year_avg IS NOT NULL
     ORDER BY
-       salary_year_avg DESC
-    LIMIT 30;
+       salary_year_avg DESC;
 END $$;
 
+'''Use CTEs to simulate variables for range values.'''
+-- CTE to simulate variables
+WITH salary_ranges AS (
+   SELECT 50000 AS low_salary, 100000 AS high_salary
+)
+SELECT
+   salary_year_avg AS "Annual Salary",
+   CASE
+      WHEN salary_year_avg < (SELECT low_salary FROM salary_ranges) THEN 'Low'
+      WHEN salary_year_avg >= (SELECT low_salary FROM salary_ranges) AND salary_year_avg <= (SELECT high_salary FROM salary_ranges) THEN 'Standard'
+      ELSE 'High'
+   END AS salary_buckets
+FROM
+   job_postings_fact
+WHERE
+   job_title_short = 'Data Analyst' AND
+   salary_year_avg IS NOT NULL
+ORDER BY
+   salary_year_avg DESC
