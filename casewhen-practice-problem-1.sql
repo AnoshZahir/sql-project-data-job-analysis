@@ -32,3 +32,9 @@ WHERE
 ORDER BY
    salary_year_avg DESC -- Order from highest to lowest salary
 LIMIT 30
+
+'''Dynamic salary ranges
+The problem does not define the salary ranges. So instead of using magic numbers we use POSTgres DO blocks to define local variables.
+
+
+'''
