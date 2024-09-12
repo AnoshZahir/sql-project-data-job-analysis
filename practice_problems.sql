@@ -98,3 +98,18 @@ Categorize the salaries from each job posting to see if it fits in my desired sa
  - What to do?
 '''
 SELECT
+   salary_year_avg as "Annual Salary",
+   CASE
+      -- Categorize salaries
+      -- Assumes no negative values in salary_year_avg field. 
+      WHEN salary_year_avg < 50000 THEN 'Low'
+      WHEN salary_year_avg >= 50000 AND salary_year_avg <= 100000 THEN 'Standard'
+      ELSE 'High'
+   END AS salary_buckets
+FROM
+   job_postings_fact
+WHERE
+   job_title_short = 'Data Analyst'
+ORDER BY
+   salary_year_avg DESC
+LIMIT 30
