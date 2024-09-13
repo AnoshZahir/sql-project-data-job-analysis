@@ -41,5 +41,27 @@ Implement a subquery to aggregate job counts per company before classifying them
 --SELECT * FROM job_postings_fact LIMIT 5;
 
 -- Step 2: Write the main subquery to get the size of each company.
+--SELECT 
+    --company_dim.name
 
 
+
+-- For this problem a 'regular' query is sufficient, as below.
+SELECT
+    company_dim.name AS company_name,
+    count(job_postings_fact.company_id) as no_of_job_postings,
+    CASE
+        WHEN count(job_postings_fact.company_id) < 10 THEN 'Small'
+        WHEN count(job_postings_fact.company_id) BETWEEN 10 AND 50 THEN 'Medium'
+        ELSE 'Large'
+    END AS size_of_company
+FROM
+    company_dim
+JOIN
+    job_postings_fact
+ON
+    company_dim.company_id = job_postings_fact.company_id
+GROUP BY
+    company_name
+ORDER BY
+    no_of_job_postings
