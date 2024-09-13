@@ -35,7 +35,6 @@ Determine the size category ("Small", "Medium" or "Large") for each company by f
     "Large" if it has more than 50 job postings.
 Implement a subquery to aggregate job counts per company before classifying them based on size.
 '''
-
 -- Step 1: View the data from the two tables to know what I am working with.
 --SELECT * FROM company_dim LIMIT 5;
 --SELECT * FROM job_postings_fact LIMIT 5;
