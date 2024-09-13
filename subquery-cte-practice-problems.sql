@@ -43,7 +43,6 @@ Implement a subquery to aggregate job counts per company before classifying them
 -- Step 2: Write the main subquery to get the size of each company.
 -- First write the subquery that aggregates the postings per company.
 -- Then query that and classify the company based on the no of postings.
-
 SELECT
     company_dim.name AS company_name,
     CASE
@@ -67,7 +66,6 @@ ON
     company_dim.company_id = job_postings_per_company_id.company_id
 ORDER BY -- Ordering of the results was not asked for in the problem specs.
     job_postings_per_company_id.no_of_job_postings, company_name
-
 
 -- For this problem a 'regular' query is sufficient, as below.
 SELECT
