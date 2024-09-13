@@ -27,3 +27,19 @@ JOIN
     skills_dim
 ON
     skills_dim.skill_id = jobs_per_skill.skill_id
+
+'''Practice Problem 2
+Determine the size category ("Small", "Medium" or "Large") for each company by first identifying the number of job postings they have. Use a subquery to calculate the total job postings per company. A company is considered:
+    "small" if it has less than 10 job postings
+    "Medium" if the number of job postings is between 10 and 50
+    "Large" if it has more than 50 job postings.
+Implement a subquery to aggregate job counts per company before classifying them based on size.
+'''
+
+-- Step 1: View the data from the two tables to know what I am working with.
+--SELECT * FROM company_dim LIMIT 5;
+--SELECT * FROM job_postings_fact LIMIT 5;
+
+-- Step 2: Write the main subquery to get the size of each company.
+
+
