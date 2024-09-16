@@ -1,7 +1,7 @@
-# SQL Project: Data Job Analysis
+# SQL Project: Data Job Analysis (Practice Problems)
 
 ## Project Description
-This project focuses on analyzing job listing data from the tech industry using PostgreSQL. The goal is to extract insights such as the number of jobs per category, average salaries, and the most popular programming languages required by employers. The queries provided in this project are designed to help understand job market trends and requirements for data-related positions.
+This project is based on a tutorial video that covered job market analysis using SQL. However, the purpose here is not to duplicate the tutorial’s analysis but rather to focus on solving SQL practice problems that were presented without solutions in the video. The solutions provided in this project are my own work, without verification against the original author's answers. The motivation for this project is to practice SQL, showcase problem-solving skills, and demonstrate Git version control proficiency.
 
 ## Setup Instructions
 To set up and run the queries in this project, follow the steps below:
@@ -49,19 +49,12 @@ ORDER BY
    job_posted_count DESC;
 ```
 
-Average salary per job category: This query calculates the average salary for each job category:
---'''To be updated'''
-
-Top 5 customers by total order value (complex query): This query retrieves the top customers based on their total order value:
---'''To be updated'''
-
 ## Project Status
-This project is currently in progress. The next steps include further analysis of job trends by location and company size.
+This project is complete and includes all practice problems that were not presented with solutions in the video tutorial. Additional solutions were created independently and reflect my approach to problem-solving in SQL.
 
 ## Future Improvements
-- Add queries to analyze job trends based on geographical location.
-- Perform salary trend analysis over time and across various job categories.
-- Integrate external data sources to enrich job listing information.
+- Although the project focused on solving the SQL practice problems from the tutorial, additional analyses, such as trends by geographical location or salary, could be explored if the scope were expanded.
+- Integrating external data sources could further enrich the dataset, providing more comprehensive and up-to-date insights.
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
