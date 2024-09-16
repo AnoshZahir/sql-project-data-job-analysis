@@ -84,3 +84,28 @@ GROUP BY
     company_name
 ORDER BY -- Ordering of the results was not asked for in the problem specs.
     no_of_job_postings, company_name
+:
+-- First get the no of job_ids per skill_id
+SELECT
+    skills_job_dim.skill_id,
+    skills_dim.skills,
+    count(skills_job_dim.job_id) as skill_count
+FROM
+    skills_job_dim
+JOIN
+    skills_dim
+ON
+    skills_job_dim.skill_id = skills_dim.skill_id
+JOIN
+    job_postings_fact
+ON
+    skills_job_dim.job_id = job_postings_fact.job_id
+WHERE
+    job_postings_fact.job_location = 'Anywhere' AND
+    job_postings_fact.job_title_short = 'Data Analyst'
+GROUP BY
+    skills_job_dim.skill_id,
+    skills_dim.skills
+ORDER BY
+    skill_count DESC
+LIMIT 5
