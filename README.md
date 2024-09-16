@@ -56,5 +56,8 @@ This project is complete and includes all practice problems that were not presen
 - Although the project focused on solving the SQL practice problems from the tutorial, additional analyses, such as trends by geographical location or salary, could be explored if the scope were expanded.
 - Integrating external data sources could further enrich the dataset, providing more comprehensive and up-to-date insights.
 
+## Lessons Learned
+Throughout this project, I gained valuable experience in solving SQL practice problems and using version control with Git. I refined my skills in writing complex queries using JOINs, subqueries, CASE WHEN statements, and Common Table Expressions (CTEs). Additionally, I learned how to handle real-world data scenarios, such as managing missing values and categorizing data. Effective branching and merging in Git was crucial for version control, helping me maintain clean code and organize changes efficiently.
+
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
